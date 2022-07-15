@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="form.css">
+        <title>Form Using DOM</title>
+        <script type="text/javascript">
+            function validate(){
+                var fn=document.getElementById("first").value;
+                var sn=document.getElementById("second").value;
+                var mn=document.getElementById("num").value;
+                if(fn.length<4  || sn.length<2 || mn.length<10)
+                {
+                    document.getElementById("first").style.border="4px solid red";
+                    document.getElementById("l").style.visibility="visible";
+                    document.getElementById("second").style.border="5px solid red";
+                    document.getElementById("l1").style.visibility="visible";
+                    document.getElementById("pswd").style.border="5px solid red";
+                    document.getElementById("l2").style.visibility="visible";
+                    document.getElementById("email").style.border="5px solid red";
+                    document.getElementById("l3").style.visibility="visible";
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+            function change()
+            {
+                document.getElementById("i").src="CSE.png";
+            }
+            function unchange()
+            {
+                document.getElementById("i").src="logo.png";
+            }
+            function myfunction()
+            {
+                var x=document.getElementById("pass");
+                if(x.type === "password")
+                {
+                    x.type="text";   
+                }
+                else{
+                    x.type="password";
+                }
+            }
+        </script>
+    </head>
+    <body background="form.gif">
+        <center>
+        <div>
+            <form action="/karthik.php" method="post" onsubmit=" return validate();" id="f">
+           <table>
+            <h1><u><b>Student Registration Form</b></u></h1>
+            <tr><td style="color: white;"><b>First Name:</b></td><td><input type="text" placeholder="First name" id="first" required>*<label id="l" style="color: red;visibility: hidden;">Invalid Data!!!</label>
+            </td></tr>
+            <tr><td style="color: white;"><b>Second Name:</b></td><td><input type="text" placeholder="Last name" id="second" required>*<label id="l1" style="color: red;visibility: hidden;">Invalid Data!!!</label>
+            </td></tr>
+            <tr><td style="color: white;"><b>DOB:</b></td><td><input type="date"></td></tr>
+            <tr><td style="color: white;"><b>Mobile Number:</b></td><td><input type="number" placeholder="Enter number" id="num" required>*
+            </td></tr>
+            <tr><td style="color: white;"><b>Gender:</b></td><td style="color: white;"><b>Male</b><input type="radio" name="a">
+                <b>Female</b><input type="radio" name="a">
+                <b>Others</b><input type="radio" name="a"></td></tr>
+            <tr><td style="color: white;"><b>Branch:</b><td><select>
+               <option>selct Your branch</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>MECH</option>
+                <option>CHEM</option>
+                <option>MME</option>
+                <option >CIVIL</option></select></td></tr>
+                <tr><td style="color: white;"><b>Password:</b> </td><td><input type="password" placeholder="Enter your password" id="pass" required>*<label id="l2" style="color: red;visibility: hidden;">Invalid Data!!!</label></td></tr>
+                <tr><td></td><td style="color: white;"><input type="checkbox" id="cb" onclick="myfunction()"><b>Show Password</b></td></tr>
+                <tr><td style="color: white;"><b>Email:</b> <td><input type="email" id="e" placeholder="Example@gmail.com" required><label id="l3" style="color: red;visibility: hidden;">Invalid Email Id!!!</label></td></tr>
+                <tr><td style="color: white;"><b>File:</b> <td><input type="file" id="f" style="color: white;"></td></tr>
+                <tr><td style="color: white;"><b>Hobbies:</b><td style="color: white;"><input type="checkbox" >Cricket<input type="checkbox" style="color: white;">Kabaddi<input type="checkbox" style="color: white;">VolleyBall
+                <input type="checkbox" style="color: white;">Playing Games<input type="checkbox" style="color: white;">
+                Reading<input type="checkbox" style="color: white;">Watching Movies<input type="checkbox" style="color: white;">Writing<input type="checkbox" style="color: white;">Sleeping</td></tr>
+                <tr><td style="color: white;"><b>Address:</b> <td><textarea name="massage"></textarea></td></tr><br>
+                <tr><td style="color: white;"> <label>submit/reset:</label></td> <td><input type="submit" value="submit"><input type="reset" value="reset"></td></tr>
+            </table>
+            <p style="background-color: white;"><b>If you are already registered then </b> <a href="login1.html" ><b>clickhere</b></a></p>
+        </form>
+        </div>
+        <footer style="background-color: white"><p style="color: blue;">copyrights@2022</p></footer>
+    </center>
+    </body>
+</html>
